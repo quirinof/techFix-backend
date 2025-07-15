@@ -19,7 +19,7 @@ export class PrismaBillRepository implements BillRepository {
       skip,
       take,
       where: {
-        serviceOrderId,
+        ...(serviceOrderId && { serviceOrderId }),
       },
     });
     return bills;
